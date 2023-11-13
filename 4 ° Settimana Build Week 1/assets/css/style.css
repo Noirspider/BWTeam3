@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap');
+
+body{
+    margin: 0;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 2em 4em;
+}
+
+#epicode-logo{
+    background-image: url(../img/epicode_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 75px;
+}
+
+h1 {
+    font-size: 60px; 
+    font-weight: 300;
+    font-family: 'Outfit', sans-serif;
+    line-height: 0.8em;
+}
+
+h2{
+    color: #d20094;
+    font-size: 32px;
+    font-family: 'Outfit', sans-serif;
+}
+
+ul{
+    padding: 0;
+    margin: 2.5em 1.5em;
+    line-height: 1.5em;
+}
+
+form{
+    margin-top: 5em;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form div{
+    display: flex;
+}
+
+form button{
+    padding: 1.5em 4em;
+    float: right;
+}
+
+form span{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+

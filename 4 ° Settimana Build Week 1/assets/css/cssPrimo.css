@@ -33,20 +33,16 @@ body{
     flex-wrap: wrap;
     margin-bottom: 40px;
 
-
-
 }
 
 label{
     color: white;
     font-family: 'Outfit', sans-serif;
-    
     border-radius: 50px;
     border-top:solid  3px white;
-    border-left:solid  3px rgba(255, 255, 255, 0.637);
+    border-left:solid  3px linear-gradient(top #e6dddd right, #e6dddd 0%, #9c9ea0 100%);
     border-bottom:solid  3px rgba(255, 255, 255, 0.418);
     border-right:solid  3px rgba(255, 255, 255, 0.219);
-
     padding:20px 50px;
     background-color: rgba(240, 248, 255, 0.151) ;
 }

@@ -23,10 +23,6 @@
             height: 300px;
         }
 
-        .base-timer__svg {
-            transform: scaleX(-1);
-        }
-
         .base-timer__circle {
             fill: none;
             stroke: none;
@@ -95,7 +91,7 @@
             }
         };
 
-        const TIME_LIMIT = 60;
+        const TIME_LIMIT = 10;
         let timePassed = 0;
         let timeLeft = TIME_LIMIT;
         let timerInterval = null;
@@ -116,6 +112,8 @@
         "
       ></path> 
     </g>
+    <text x="50" y="35" text-anchor="middle">Secondi</text> 
+    <text x="50" y="70" text-anchor="middle">Rimanenti</text>
   </svg>
   <span id="base-timer-label" class="base-timer__label">  ${formatTime(
             timeLeft

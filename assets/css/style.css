@@ -14,7 +14,11 @@ body{
 }
 
 .container {
-    margin: 2em 4em;
+    padding: 2em 4em;
+    min-width: 768px;
+    width: 50%;
+    margin: auto
+    
 }
 
 #epicode-logo{

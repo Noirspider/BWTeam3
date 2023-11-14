@@ -57,8 +57,16 @@ form div{
 }
 
 form button{
+    border-style: none;
+    background-color: #00FFFF;
+    box-shadow: 0 0 40px #00FFFF;
     padding: 1.5em 4em;
-    float: right;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+form div input{
+    
 }
 
 form span{

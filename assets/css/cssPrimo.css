@@ -54,10 +54,11 @@ label:hover{
 }
 
 #thisQuestion{ 
-    font-stretch: extra-condensed;
+
+    font-stretch: expanded;
     text-align: center;
     font-size: 16px;
-
+    margin-top: 120px;
     color: white;
     font-family: 'Outfit', sans-serif;
 

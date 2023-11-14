@@ -126,10 +126,10 @@ let currentQuestionIndex = 0;
 let correctAnswersCount = 0;
 
 function createQuestionElement(question, index) {
-const container = document.createElement('div'); // Crea un nuovo div come contenitore per la domanda.
-container.className = 'question-container'; // Assegna la classe 'question-container' per lo styling.
-container.id = 'question-' + index; // Assegna un ID univoco basato sull'indice della domanda.
-const qElement = document.createElement('p'); // Crea un paragrafo per la domanda effettiva.
+const container = document.createElement('div');  // Crea un nuovo div come contenitore per la domanda.
+container.className = 'question-container';       // Assegna la classe 'question-container' per lo styling.
+container.id = 'question-' + index;               // Assegna un ID univoco basato sull'indice della domanda.
+const qElement = document.createElement('p');     // Crea un paragrafo per la domanda effettiva.
 qElement.innerHTML = question.question; // Imposta il testo della domanda dal parametro question.
 container.appendChild(qElement); // Aggiunge il paragrafo al contenitore della domanda.
 const allAnswers = [...question.incorrect_answers]; // Copia le risposte errate e verifica se la risposta corretta non è già presente nell'array.

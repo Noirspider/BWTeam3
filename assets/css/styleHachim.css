@@ -62,7 +62,10 @@ main{
 }
 
 /* animazione al passaggio del mouse da implementare bene su js */
-path:hover{
+.star:hover{
+    fill: #00FFFF;
+}
+.active{
     fill: #00FFFF;
 }
 
@@ -96,4 +99,9 @@ textarea{
 textarea::placeholder{
     font-family: 'Inter', 'sans-serif';
     padding-inline-start: 20px;
+}
+textarea:focus{
+    outline: none;
+    color: white;
+    font-family: 'Inter', 'sans-serif';
 }

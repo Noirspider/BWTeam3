@@ -93,24 +93,24 @@
         },
     ];
 
-let currentQuestionIndex = 0;
-let correctAnswersCount = 0;
+let currentQuestionIndex = 0;       //indice delle domande per mostrarle a schermo
+let correctAnswersCount = 0;    //contatore delle risposte corrette
 
 function createQuestionElement(question, index) {
     const container = document.createElement('div'); // Crea un nuovo div come contenitore per la domanda.
-    container.className = 'answer'; // Assegna la classe 'question-container' per lo styling.
+    container.className = 'question-container'; // Assegna la classe 'question-container' per lo styling.
     container.id = 'question-' + index; // Assegna un ID univoco basato sull'indice della domanda.
     const qElement = document.createElement('p'); // Crea un paragrafo per la domanda effettiva.
     qElement.innerHTML = question.question; // Imposta il testo della domanda dal parametro question.
     container.appendChild(qElement); // Aggiunge il paragrafo al contenitore della domanda.
     const allAnswers = [...question.incorrect_answers]; // Copia le risposte errate e verifica se la risposta corretta non è già presente nell'array.
     if (!allAnswers.includes(question.correct_answer)) {
-        allAnswers.push(question.correct_answer); // Se la risposta corretta non è presente, la aggiunge all'array.
+        allAnswers.push(question.correct_answer);            // Se la risposta corretta non è presente, la aggiunge all'array.
     }
 
-    allAnswers.sort(() => Math.random() - 0.5); // Mescola l'array delle risposte per visualizzarle in ordine casuale.
-    allAnswers.forEach(answer => { // Cicla su tutte le risposte per creare i radio button.
-        const label = document.createElement('label'); // Crea un elemento label, utile per accessibilità e styling.
+    allAnswers.sort(() => Math.random() - 0.5);              // Mescola l'array delle risposte per visualizzarle in ordine casuale.
+    allAnswers.forEach(answer => {                           // Cicla su tutte le risposte per creare i radio button.
+        const label = document.createElement('label');       // Crea un elemento label, utile per accessibilità e styling.
         const radioButton = document.createElement('input'); // Crea un radio button per la risposta.
         radioButton.type = 'radio';
         radioButton.name = 'question-' + index; // Assegna un nome basato sull'indice della domanda, così tutti i radio buttons sono raggruppati.
@@ -158,6 +158,7 @@ function showNextQuestion() {
         const nextQuestion = document.getElementById('question-' + currentQuestionIndex); // Ottiene l'elemento della prossima domanda tramite il suo ID univoco.
         if (nextQuestion) nextQuestion.style.display = 'block'; // Se esiste un elemento della prossima domanda, mostra questo elemento impostando il display a 'block'.
     } else {
+        //ccc
         alert('Sembra funzionare e tu ne hai indovinate : ' + correctAnswersCount); // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }
 }

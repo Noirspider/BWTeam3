@@ -105,7 +105,17 @@ colore font: #E7E7EB -->
                 array[i].classList.add('active')
                 console.log(array)
             }
+        }) 
+    })
+    array.forEach((stella,index)=>{
+        stella.addEventListener("mouseout", function(){
+            for(let i=index; i>0; i--){
+                array[i].classList.remove('active')
+                console.log(array)
+            }
         })
+        
+        
     })
    }
  

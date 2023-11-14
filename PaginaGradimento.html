@@ -95,34 +95,19 @@ colore font: #E7E7EB -->
     </main>
 </body>
 <script>
-    var stelle = document.querySelectorAll('.star');
-    let arrayStar= Array.from(stelle);
-    console.log(arrayStar);
-    function brightStars(array){
-        array.forEach((stella)=>{
-            stella.addEventListener('mouseover',function(){
-                stella.classList.add('active');
-            })       })
-    }
-            // let precedentStars= document.querySelectorAll('star active');
-            // for (i=precedentStars.length; i<0; i--){
-            //     this.classList.add('active');
-            // }
-        
+   function brightStars(){
+    let stelle = document.querySelectorAll('.star');
+     let array =Array.from(stelle);
+    console.log(stelle);
+    array.forEach((stella)=>{
+        stella.addEventListener("click", function(){
+            return array.indexOf(stella)
+        })
+    })
+   }
+ 
 
-            // function colorStars(array){
-            //     array
-            // }
-
-
-    brightStars(arrayStar);
-    // function illuminaPrecedenti(array){
-    //     let arrayNuovo = array;
-    //     for(let i=0; i< arrayNuovo.lenght; i++){
-    //         if (arrayNuovo[i].classList('active'){})
-    //     }
-
-    // }
+  brightStars();
 </script>
 
 </html>

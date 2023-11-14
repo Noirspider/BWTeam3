@@ -145,7 +145,7 @@ function checkAnswer(question, index) {
             label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
         }
     });
-    if (answerGiven) showNextQuestion(); // Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
+     if (answerGiven) showNextQuestion(); // Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda. // io ho fatto la modifica
 }
 
 

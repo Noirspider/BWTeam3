@@ -62,12 +62,12 @@ main{
 }
 
 /* animazione al passaggio del mouse da implementare bene su js */
-.star:hover{
-    fill: #00FFFF;
-}
-/* .active:hover{
+/* .star:hover{
     fill: #00FFFF;
 } */
+.active{
+    fill: #00FFFF;
+}
 
 
 

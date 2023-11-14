@@ -99,14 +99,16 @@ colore font: #E7E7EB -->
     let stelle = document.querySelectorAll('.star');
      let array =Array.from(stelle);
     console.log(stelle);
-    array.forEach((stella)=>{
-        stella.addEventListener("click", function(){
-            return array.indexOf(stella)
+    array.forEach((stella,index)=>{
+        stella.addEventListener("mouseover", function(){
+            for(let i=index; i>0; i--){
+                array[i].classList.add('active')
+                console.log(array)
+            }
         })
     })
    }
  
-
   brightStars();
 </script>
 

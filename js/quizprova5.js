@@ -98,7 +98,7 @@ let correctAnswersCount = 0;    //contatore delle risposte corrette
 
 function createQuestionElement(question, index) {
     const container = document.createElement('div'); // Crea un nuovo div come contenitore per la domanda.
-    container.className = 'question-container'; // Assegna la classe 'question-container' per lo styling.
+    container.className = 'answer'; // Assegna la classe 'answer' per lo styling.
     container.id = 'question-' + index; // Assegna un ID univoco basato sull'indice della domanda.
     const qElement = document.createElement('p'); // Crea un paragrafo per la domanda effettiva.
     qElement.innerHTML = question.question; // Imposta il testo della domanda dal parametro question.
@@ -158,7 +158,6 @@ function showNextQuestion() {
         const nextQuestion = document.getElementById('question-' + currentQuestionIndex); // Ottiene l'elemento della prossima domanda tramite il suo ID univoco.
         if (nextQuestion) nextQuestion.style.display = 'block'; // Se esiste un elemento della prossima domanda, mostra questo elemento impostando il display a 'block'.
     } else {
-        //ccc
         alert('Sembra funzionare e tu ne hai indovinate : ' + correctAnswersCount); // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }
 }

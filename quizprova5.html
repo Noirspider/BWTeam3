@@ -30,11 +30,11 @@
         </header>
         <main>
             <div id="boxQuestionAnswer">
-                <button id="start-button">Inizia il quiz</button>
                 <div id="quiz-container">
-                    <div class="containerAnswer">
-                        <!-- <div class="answer"> </div> Appendere questo div generato da js con class answer -->
+                    <!--<div class="containerAnswer">
+                         <div class="answer"> </div> Appendere questo div generato da js con class answer 
                     </div>
+                     -->
                 </div>
             </div>
             <h5 id="thisQuestion"><span></span></h5>
@@ -138,7 +138,7 @@
     },
 ];
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex = -1;
 let correctAnswersCount = 0;
 
 function createQuestionElement(question, index) {
@@ -146,7 +146,7 @@ const container = document.createElement('div');  // Crea un nuovo div come cont
 container.className = 'question-container';       // Assegna la classe 'question-container' per lo styling.
 container.id = 'question-' + index;               // Assegna un ID univoco basato sull'indice della domanda.
 const qElement = document.createElement('h1');
-qElement.id = 'questions';     // Crea un paragrafo per la domanda effettiva.
+qElement.className = 'questions';     // Crea un paragrafo per la domanda effettiva.
 qElement.innerHTML = question.question; // Imposta il testo della domanda dal parametro question.
 container.appendChild(qElement); // Aggiunge il paragrafo al contenitore della domanda.
 const allAnswers = [...question.incorrect_answers]; // Copia le risposte errate e verifica se la risposta corretta non è già presente nell'array.
@@ -155,20 +155,21 @@ if (!allAnswers.includes(question.correct_answer)) {
 }
 
 allAnswers.sort(() => Math.random() - 0.5); // Mescola l'array delle risposte per visualizzarle in ordine casuale.
-    const containerAnswer = document.getElementsByClassName("containerAnswer")
+const containerAnswer = document.createElement("div");
+containerAnswer.className = "containerAnswer";   
 allAnswers.forEach(answer => { // Cicla su tutte le risposte per creare i radio button.
     const label = document.createElement('label'); // Crea un elemento label, utile per accessibilità e styling.
     const radioButton = document.createElement('input'); // Crea un radio button per la risposta.
     radioButton.type = 'radio';
     radioButton.name = 'question-' + index; // Assegna un nome basato sull'indice della domanda, così tutti i radio buttons sono raggruppati.
     radioButton.value = answer; // Imposta il valore del radio button alla risposta corrispondente.
+    radioButton.style.display = "none";
     label.appendChild(radioButton); // Aggiunge il radio button alla label.
     label.append(document.createTextNode(answer)); // Aggiunge il testo della risposta dopo il radio button nella label.
-    container.appendChild(label); // Aggiunge la label completa al contenitore della domanda.
-    radioButton.addEventListener('click', () => checkAnswer(question, index)); // Aggiunge un event listener per gestire il click sul radio button.
-
+    containerAnswer.appendChild(label); // Aggiunge la label completa al contenitore della domanda.
+    radioButton.addEventListener('click', () => checkAnswer(question, index)); // Aggiunge un event listener per gestire il click sul radio button.    
 });
-
+container.appendChild(containerAnswer);
 return container; // Restituisce il contenitore della domanda completo con le risposte.
 
 }
@@ -210,15 +211,25 @@ if (currentQuestionIndex < questions.length) { // Controlla se l'indice corrente
 }
 
 
+window.onload = function(){
+    questions.forEach((question, index) => { // Cicla su ogni domanda nell'array 'questions'.
+    const questionElement = createQuestionElement(question, index); // Crea un elemento DOM per la domanda attuale.
+    document.getElementById('quiz-container').appendChild(questionElement); // Aggiunge l'elemento della domanda al contenitore del quiz.
+});
+showNextQuestion();   
+}
 
+/*
 document.getElementById('start-button').addEventListener('click', () => { // Aggiunge un event listener al bottone di inizio.
 questions.forEach((question, index) => { // Cicla su ogni domanda nell'array 'questions'.
     const questionElement = createQuestionElement(question, index); // Crea un elemento DOM per la domanda attuale.
     document.getElementById('quiz-container').appendChild(questionElement); // Aggiunge l'elemento della domanda al contenitore del quiz.
 });
+
 showNextQuestion(); // Chiama la funzione per mostrare la prima domanda.
 document.getElementById('start-button').style.display = 'none'; // Nasconde il bottone di inizio dopo che è stato cliccato.
 });
+*/
 
 </script>
 </body>

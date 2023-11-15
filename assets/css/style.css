@@ -80,11 +80,10 @@ form span{
     font-weight: 700;
 }
 
-#containerAnswer{
-    
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.containerAnswer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     
 }
 
@@ -96,7 +95,7 @@ form span{
 }
 
 label{
-    
+    width: 30%;
     margin-top: 30px;
     color: white;
     font-family: 'Outfit', sans-serif;
@@ -106,7 +105,8 @@ label{
     border-bottom:solid  3px rgba(255, 255, 255, 0.418);
     border-right:solid  3px rgba(255, 255, 255, 0.219);
     padding:20px 50px;
-    background-color: rgba(240, 248, 255, 0.151) ;
+    background-color: rgba(240, 248, 255, 0.151);
+    cursor: pointer;
 }
 
 label:hover{ 
@@ -133,10 +133,14 @@ label:hover{
 
 }
 
-#questions{
+.questions{
+    line-height: 1;
     text-align: center;
     margin-bottom: 60px;
     font-size: 60px;
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
+}
+input{
+    text-decoration-style: none;
 }

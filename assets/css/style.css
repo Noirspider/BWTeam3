@@ -147,6 +147,11 @@ input{
 
 /*=================================== pagina di style Mattia ===========================================*/
 
+#mostraIlRisultato{
+    display: none;
+}
+
+
 
 .rate-us-center {
     text-align: center;

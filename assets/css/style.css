@@ -144,43 +144,43 @@ label:hover{
 
 /*********************************** pagina di stile gradimento (mattia) ***********************************/
 
-.center {
+.rate-us-center {
     text-align: center;
     margin: 10px;
 } 
 
-#title {
+#rate-us-title {
     font-weight: bold;
 }
 
-#under-title {
+#rate-us-under-title {
     font-weight: normal;
     letter-spacing: 2px;
     font-size: 20px;
     margin-bottom: 50px;
 }
 
-.sec-title {
+.rate-us-sec-title {
     margin: 0;
     padding: 8px;
 }
 
-#valutazione {
+#rate-us-valutazione {
     display: flex;
     justify-content: space-between;
 }
 
 
-#grafico {
+#rate-us-grafico {
     text-align: center;
     padding: 7%;
 }
 
-#rate {
+#rate-us-rate {
     text-align: center;
 }
 
-#button-rate {
+#rate-us-button-rate {
     background-color: transparent;
     padding: 15px 60px;
     color: white;
@@ -190,7 +190,7 @@ label:hover{
     margin: 30px;
 }
 
-.percentuale-risultato {
+.rate-us-percentuale-risultato {
     font-weight: bold;
     margin: 0;
     padding: 8px;
@@ -201,7 +201,7 @@ label:hover{
     margin: 0;
 }
 
-#valutazione {
+#rate-us-valutazione {
     display: flex;
     text-align: center;
 }

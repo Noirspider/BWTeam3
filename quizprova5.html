@@ -248,7 +248,10 @@
               //  label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
             }
         });
-        if (answerGiven) showNextQuestion(); // Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
+        if (answerGiven){
+         showNextQuestion();// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
+        }
+         
     }
     
     
@@ -258,9 +261,11 @@
         const currentQuestion = document.getElementById('question-' + currentQuestionIndex); // Ottiene l'elemento corrente della domanda tramite il suo ID univoco.
         if (currentQuestion) currentQuestion.style.display = 'none'; // Se esiste un elemento della domanda corrente, nasconde questo elemento impostando il display a 'none'.
         currentQuestionIndex++; // Incrementa l'indice per passare alla prossima domanda.
+        reset();
+        startTimer();
         if (currentQuestionIndex < questions.length) { // Controlla se l'indice corrente è ancora minore del numero totale di domande.
         const nextQuestion = document.getElementById('question-' + currentQuestionIndex); // Ottiene l'elemento della prossima domanda tramite il suo ID univoco.
-        if (nextQuestion) nextQuestion.style.display = 'block'; // Se esiste un elemento della prossima domanda, mostra questo elemento impostando il display a 'block'.
+        if (nextQuestion) nextQuestion.style.display = 'block'; // Se esiste un elemento della prossima domanda, mostra questo elemento impostando il display a 'block'
     } else {
         const mostraRisultato = document.getElementById("mostraIlRisultato");
         mostraRisultato.style.display = "block";
@@ -353,7 +358,7 @@ d="
 )}</span>
 </div>
 `;
-startTimer();
+
 
 function onTimesUp() {
     clearInterval(timerInterval);
@@ -375,9 +380,19 @@ function startTimer() {
     }, 1000);
 }
 
+function reset(){
+    clearInterval(timerInterval);
+    timePassed = 0;
+    timeLeft = TIME_LIMIT
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+            timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+}
+
 function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    let seconds = time % 61;
 
     if (seconds < 10) {
         seconds = `0${seconds}`;

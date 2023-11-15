@@ -159,6 +159,22 @@
     },
     {
         category: "Science: Computers",
+        type: "boolean",
+        difficulty: "easy",
+        question: "Linux was first created as an alternative to Windows XP.",
+        correct_answer: "False",
+        incorrect_answers: ["True"],
+    },
+    {
+        category: "Science: Computers",
+        type: "boolean",
+        difficulty: "easy",
+        question: "Linux was first created as an alternative to Windows XP.",
+        correct_answer: "False",
+        incorrect_answers: ["True"],
+    },
+    {
+        category: "Science: Computers",
         type: "multiple",
         difficulty: "easy",
         question: "Which programming language shares its name with an island in Indonesia?",
@@ -199,6 +215,16 @@
             radioButton.addEventListener('click', () => checkAnswer(question, index)); // Aggiunge un event listener per gestire il click sul radio button.    
         });
         container.appendChild(containerAnswer);
+
+        const questionsCount= document.createElement("div");
+        questionsCount.className = "questions-count"; 
+        questionsCount.innerHTML = `QUESTION  ${index+1}<span>  /  ${questions.length} </span>`;
+        container.appendChild(questionsCount);
+        
+
+
+
+
         return container; // Restituisce il contenitore della domanda completo con le risposte.
         
     }
@@ -242,10 +268,10 @@
         const totalWrongAnswers = totalQuestion - correctAnswersCount ;
         let printValue1 =  document.querySelector("#rate-us-left-correct .rate-us-percentuale-risultato");
         console.log(printValue1)
-        printValue1.innerHTML= `${correctAnswersCount*10}% 
+        printValue1.innerHTML= `${parseInt(Math.round(correctAnswersCount*100/totalQuestion))}% 
         <p class="rate-us-question"> ${correctAnswersCount}/${totalQuestion} questions</p>`;
         let printValue2 =  document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
-        printValue2.innerHTML= `${totalWrongAnswers*10}%
+        printValue2.innerHTML= `${parseInt(Math.round(totalWrongAnswers*100/totalQuestion))}%
          <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
 
         

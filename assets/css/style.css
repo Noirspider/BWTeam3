@@ -46,10 +46,42 @@ h2{
     font-family: 'Outfit', sans-serif;
 }
 
+/* modifiche mie su h3  Hachim*/
+h3{
+    color: white;
+    /* font-size: 32px; */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+/* formattazione centrale */
+.centeredText{
+    text-align: center;
+}
+
 ul{
     padding: 0;
     margin: 2.5em 1.5em;
     line-height: 1.5em;
+}
+/* formattazione stelle margine spazi hachim */
+#stars{
+    margin: 1em 0;
+    margin-bottom: 2em;
+}
+/* messo il puntatore */
+#stars svg{
+    cursor: pointer;
+}
+div#stars{
+    text-align: center;
+}
+
+/* animazione al passaggio del mouse da implementare bene su js  hachim*/
+/* .star:hover{
+    fill: #00FFFF;
+} */
+.active{
+    fill: #00FFFF;
 }
 
 form{
@@ -64,21 +96,56 @@ form div{
     display: flex;
 }
 
-form button{
+form button, #welcomeProceedBtn{
     border-style: none;
     background-color: #00FFFF;
     box-shadow: 0 0 40px #00FFFF;
     padding: 1.5em 4em;
     font-weight: 700;
     font-size: 1rem;
+    cursor: pointer;
 }
-
-
 
 form span{
     font-size: 0.85rem;
     font-weight: 700;
 }
+
+/* formattazione text area della chat hachim */
+textarea{
+    width: 95%;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    resize:none;
+    border-bottom: 2px solid #d20094;
+    margin-bottom: 3em;
+}
+textarea::placeholder{
+    font-family: 'Inter', 'sans-serif';
+    padding-inline-start: 20px;
+}
+textarea:focus{
+    outline: none;
+    color: white;
+    font-family: 'Inter', 'sans-serif';
+}
+
+#formFeedback{
+    margin-top: 5em;
+    height: fit-content;
+    display: block;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: space-between; */
+}
+
+/* il bottone della pagina feedback deve essere centrale */
+#formFeedback div:last-child{
+    display: block;
+    text-align: center;
+}
+/* --------------------------------------- */
 
 #containerAnswer{
     

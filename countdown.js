@@ -75,7 +75,7 @@ function formatTime(time) {
         seconds = `0${seconds}`;
     }
 
-    return `${minutes}:${seconds}`;
+    return `${seconds}`;
 }
 
 function setRemainingPathColor(timeLeft) {

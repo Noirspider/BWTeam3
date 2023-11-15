@@ -10,7 +10,7 @@ function brightStars() {                                    //dichiarazione funz
                 stelleArray[i].classList.add('active')      // per ogni elemento dell'array stelleArray aggiungi la classe css "active"
             }
         })
-    })
+    }) //
 stelleArray.forEach((stella, index) => {                   // Per ogni elemento nell'array stelleArray, conosciuto come 'stella' e 'index' (che rappresenta l'indice)
     stella.addEventListener("mouseout", function () {      // Aggiungi un listener per l'evento di uscita del mouse dall'elemento 'stella'
         if (click === false) {                             // Se 'click' è falso (non è stato fatto un click)

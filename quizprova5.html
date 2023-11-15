@@ -213,13 +213,13 @@
             if (radio.checked) { // Controlla se il radio button corrente è selezionato.
                 answerGiven = true; // Imposta la variabile a vero perché l'utente ha selezionato una risposta.
                 if (radio.value === question.correct_answer) { // Controlla se il valore del radio button corrisponde alla risposta corretta della domanda.
-                    label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
+                     //label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
                     correctAnswersCount++; // Incrementa il contatore delle risposte corrette.
                 } else {
-                    label.classList.add('incorrect'); // Se non è corretta, aggiunge la classe 'incorrect' alla label, cambiandone il colore a rosso.
+                  //  label.classList.add('incorrect'); // Se non è corretta, aggiunge la classe 'incorrect' alla label, cambiandone il colore a rosso.
                 }
             } else if (radio.value === question.correct_answer) { // Se il radio button non è selezionato ma il suo valore corrisponde alla risposta corretta...
-                label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
+              //  label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
             }
         });
         if (answerGiven) showNextQuestion(); // Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
@@ -236,9 +236,13 @@
         const nextQuestion = document.getElementById('question-' + currentQuestionIndex); // Ottiene l'elemento della prossima domanda tramite il suo ID univoco.
         if (nextQuestion) nextQuestion.style.display = 'block'; // Se esiste un elemento della prossima domanda, mostra questo elemento impostando il display a 'block'.
     } else {
-       
         const mostraRisultato = document.getElementById("mostraIlRisultato");
         mostraRisultato.style.display = "block";
+        const totalQuestion= questions.length;
+        const totalWrongAnswers = totalQuestion - correctAnswersCount ;
+        let printValue1 =  document.querySelector("#rate-us-left-correct.rate-us-percentuale-risultato")
+        printValue1.innerHTML = correctAnswersCount
+
         
         ; // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }

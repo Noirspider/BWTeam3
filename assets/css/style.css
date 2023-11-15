@@ -140,3 +140,68 @@ label:hover{
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
 }
+
+
+/*********************************** pagina di stile gradimento (mattia) ***********************************/
+
+.center {
+    text-align: center;
+    margin: 10px;
+} 
+
+#title {
+    font-weight: bold;
+}
+
+#under-title {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.sec-title {
+    margin: 0;
+    padding: 8px;
+}
+
+#valutazione {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#grafico {
+    text-align: center;
+    padding: 7%;
+}
+
+#rate {
+    text-align: center;
+}
+
+#button-rate {
+    background-color: transparent;
+    padding: 15px 60px;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px;
+}
+
+.percentuale-risultato {
+    font-weight: bold;
+    margin: 0;
+    padding: 8px;
+}
+
+.rate-us-question {
+    font-size: 20px;
+    margin: 0;
+}
+
+#valutazione {
+    display: flex;
+    text-align: center;
+}

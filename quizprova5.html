@@ -240,9 +240,12 @@
         mostraRisultato.style.display = "block";
         const totalQuestion= questions.length;
         const totalWrongAnswers = totalQuestion - correctAnswersCount ;
-        let printValue1 =  document.querySelector("#rate-us-left-correct.rate-us-percentuale-risultato")
-        printValue1.innerHTML = correctAnswersCount
-
+        let printValue1 =  document.querySelector("#rate-us-left-correct .rate-us-percentuale-risultato");
+        console.log(printValue1)
+        printValue1.innerText= `${correctAnswersCount*10}%`;
+        let printValue2 =  document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
+        
+        printValue2.innerText= `${totalWrongAnswers*10}%`;
         
         ; // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }

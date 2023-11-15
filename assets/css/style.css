@@ -144,3 +144,68 @@ label:hover{
 input{
     text-decoration-style: none;
 }
+
+/*=================================== pagina di style Mattia ===========================================*/
+
+
+.rate-us-center {
+    text-align: center;
+    margin: 10px;
+} 
+
+#rate-us-title {
+    font-weight: bold;
+}
+
+#rate-us-under-title {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.rate-us-sec-title {
+    margin: 0;
+    padding: 8px;
+}
+
+#rate-us-valutazione {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#rate-us-grafico {
+    text-align: center;
+    padding: 7%;
+}
+
+#rate-us-rate {
+    text-align: center;
+}
+
+#rate-us-button-rate {
+    background-color: transparent;
+    padding: 15px 60px;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px;
+}
+
+.rate-us-percentuale-risultato {
+    font-weight: bold;
+    margin: 0;
+    padding: 8px;
+}
+
+.rate-us-question {
+    font-size: 20px;
+    margin: 0;
+}
+
+#rate-us-valutazione {
+    display: flex;
+    text-align: center;
+}

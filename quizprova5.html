@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>Quiz</title>
     <style>
         .correct {
@@ -22,10 +23,25 @@
 </head>
 
 <body>
-
-    <div id="quiz-container">
-        <button id="start-button">Inizia il quiz</button>
+    <div class="container">
+        <header>
+            <div id="epicode-logo"></div>
+            <div id="timer"><!-- Appendere timer e dare dimensione --></div>
+        </header>
+        <main>
+            <div id="boxQuestionAnswer">
+                <button id="start-button">Inizia il quiz</button>
+                <div id="quiz-container">
+                    <div class="containerAnswer">
+                        <!-- <div class="answer"> </div> Appendere questo div generato da js con class answer -->
+                    </div>
+                </div>
+            </div>
+            <h5 id="thisQuestion"><span></span></h5>
+        </main>
     </div>
+
+    <div id="quiz-container"></div>
 
 <script>
     const questions = [{
@@ -129,7 +145,8 @@ function createQuestionElement(question, index) {
 const container = document.createElement('div');  // Crea un nuovo div come contenitore per la domanda.
 container.className = 'question-container';       // Assegna la classe 'question-container' per lo styling.
 container.id = 'question-' + index;               // Assegna un ID univoco basato sull'indice della domanda.
-const qElement = document.createElement('p');     // Crea un paragrafo per la domanda effettiva.
+const qElement = document.createElement('h1');
+qElement.id = 'questions';     // Crea un paragrafo per la domanda effettiva.
 qElement.innerHTML = question.question; // Imposta il testo della domanda dal parametro question.
 container.appendChild(qElement); // Aggiunge il paragrafo al contenitore della domanda.
 const allAnswers = [...question.incorrect_answers]; // Copia le risposte errate e verifica se la risposta corretta non è già presente nell'array.
@@ -138,6 +155,7 @@ if (!allAnswers.includes(question.correct_answer)) {
 }
 
 allAnswers.sort(() => Math.random() - 0.5); // Mescola l'array delle risposte per visualizzarle in ordine casuale.
+    const containerAnswer = document.getElementsByClassName("containerAnswer")
 allAnswers.forEach(answer => { // Cicla su tutte le risposte per creare i radio button.
     const label = document.createElement('label'); // Crea un elemento label, utile per accessibilità e styling.
     const radioButton = document.createElement('input'); // Crea un radio button per la risposta.

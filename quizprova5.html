@@ -249,7 +249,8 @@
             }
         });
         if (answerGiven){
-         showNextQuestion();// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
+         showNextQuestion()
+         ;// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
         }
          
     }
@@ -376,6 +377,7 @@ function startTimer() {
 
         if (timeLeft === 0) {
             onTimesUp();
+            showNextQuestion();
         }
     }, 1000);
 }

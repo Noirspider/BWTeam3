@@ -46,42 +46,12 @@ h2{
     font-family: 'Outfit', sans-serif;
 }
 
-/* modifiche mie su h3  Hachim*/
-h3{
-    color: white;
-    /* font-size: 32px; */
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-/* formattazione centrale */
-.centeredText{
-    text-align: center;
-}
+
 
 ul{
     padding: 0;
     margin: 2.5em 1.5em;
     line-height: 1.5em;
-}
-/* formattazione stelle margine spazi hachim */
-#stars{
-    margin: 1em 0;
-    margin-bottom: 2em;
-}
-/* messo il puntatore */
-#stars svg{
-    cursor: pointer;
-}
-div#stars{
-    text-align: center;
-}
-
-/* animazione al passaggio del mouse da implementare bene su js  hachim*/
-/* .star:hover{
-    fill: #00FFFF;
-} */
-.active{
-    fill: #00FFFF;
 }
 
 form{
@@ -96,62 +66,26 @@ form div{
     display: flex;
 }
 
-form button, #welcomeProceedBtn{
+form button{
     border-style: none;
     background-color: #00FFFF;
     box-shadow: 0 0 40px #00FFFF;
     padding: 1.5em 4em;
     font-weight: 700;
     font-size: 1rem;
-    cursor: pointer;
 }
+
+
 
 form span{
     font-size: 0.85rem;
     font-weight: 700;
 }
 
-/* formattazione text area della chat hachim */
-textarea{
-    width: 95%;
-    height: 20px;
-    background-color: transparent;
-    border: none;
-    resize:none;
-    border-bottom: 2px solid #d20094;
-    margin-bottom: 3em;
-}
-textarea::placeholder{
-    font-family: 'Inter', 'sans-serif';
-    padding-inline-start: 20px;
-}
-textarea:focus{
-    outline: none;
-    color: white;
-    font-family: 'Inter', 'sans-serif';
-}
-
-#formFeedback{
-    margin-top: 5em;
-    height: fit-content;
-    display: block;
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: space-between; */
-}
-
-/* il bottone della pagina feedback deve essere centrale */
-#formFeedback div:last-child{
-    display: block;
-    text-align: center;
-}
-/* --------------------------------------- */
-
-#containerAnswer{
-    
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+.containerAnswer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     
 }
 
@@ -163,7 +97,7 @@ textarea:focus{
 }
 
 label{
-    
+    width: 30%;
     margin-top: 30px;
     color: white;
     font-family: 'Outfit', sans-serif;
@@ -173,7 +107,8 @@ label{
     border-bottom:solid  3px rgba(255, 255, 255, 0.418);
     border-right:solid  3px rgba(255, 255, 255, 0.219);
     padding:20px 50px;
-    background-color: rgba(240, 248, 255, 0.151) ;
+    background-color: rgba(240, 248, 255, 0.151);
+    cursor: pointer;
 }
 
 label:hover{ 
@@ -200,12 +135,208 @@ label:hover{
 
 }
 
-#questions{
+.questions{
+    line-height: 1;
     text-align: center;
     margin-bottom: 60px;
     font-size: 60px;
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
+}
+input{
+    text-decoration-style: none;
+}
+.questions-count{
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-stretch: expanded;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 120px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+
+}
+.questions-count span{
+    font-size: 20px;
+    font-weight: 400;
+    color:#a6018b;
+}
+
+.question-container {
+    display: none;           /*questa serve */
+    margin-bottom: 20px;
+}
+
+/*=================================== pagina di style Mattia ===========================================*/
+
+#mostraIlRisultato{
+    display: none;
+    width: 100%;
+}
+
+
+
+.rate-us-center {
+    text-align: center;
+    margin: 10px;
+} 
+
+#rate-us-title {
+    font-weight: bold;
+}
+
+#rate-us-under-title {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.rate-us-sec-title {
+    margin: 0;
+    padding: 8px;
+    font-size: 55px;
+}
+
+
+/*#rate-us-grafico {
+    text-align: center;
+    padding: 7%;
+}
+*/
+#rate-us-rate {
+    text-align: center;
+}
+
+#rate-us-button-rate {
+    background-color: transparent;
+    padding: 15px 60px;
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px;
+}
+
+.rate-us-percentuale-risultato {
+    font-weight: bold;
+    margin: 0;
+    padding: 8px;
+}
+
+.rate-us-question {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+
+#rate-us-valutazione {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+#rate-us-grafico{
+    
+
+}
+
+#canvaContainer{
+    position: relative;
+    width: 75%;
+}
+#complimenti{
+    width: 40%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+#rate-us-left-correct, #rate-us-right-content{
+    max-width: 195px;
+}
+
+.insideDonutText{
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+
+.insideDonutText span{
+    color: #00FFFF;
+    font-size: 1rem;
+}
+
+#complimenti p{
+    font-size: 0.8rem;
+}
+
+.insideDonutText #failedExam{
+    color: #a6018b;
+}
+
+/********************************************* ************************************************/
+
+.base-timer {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.re-size {
+    /* <--------------------------------------------------- proporzionare la grandezza e posizione in base alla pagina  */
+    font-size: 7px;
+    color: #EFE9F0;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(00, 255, 255);
+}
+
+.base-timer__path-remaining.orange {
+    color: rgb(00, 255, 255);
+}
+
+.base-timer__path-remaining.red {
+    color: rgb(00, 255, 255);
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
 }
 
 /* -----------------------FORMATTAZIONE HACHIM----------------------------- */

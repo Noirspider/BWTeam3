@@ -5,7 +5,8 @@ function brightStars() {                                    //dichiarazione funz
     console.log(stelle);                                    // vediamo se non abbiamo sbagliato nulla pubblicando sulla console la variabile stelle
     stelleArray.forEach((stella, index, stelleArray) => {    // Per ogni elemento nell'array stelleArray, conosciuto come 'stella' e 'index' (che rappresenta l'indice)
         stella.addEventListener("click", function () {      // Aggiungi un listener per l'evento click esegui questa funzione
-        click = true;                                       // se c'è stato il click cambia il valore della variabile click in true
+        click=true;                                       // se c'è stato il click cambia il valore della variabile click in true
+        return console.log( index);
         for (let i = index; i > 0; i--) {                   // avvia un ciclo for partendo dal valore di index e scendo fino a 0
                 stelleArray[i].classList.add('active')      // per ogni elemento dell'array stelleArray aggiungi la classe css "active"
             }
@@ -32,4 +33,17 @@ stelleArray.forEach((stella, index) => {                   // Rimuovi la classe 
 console.log(click);                                        // Stampa sulla console il valore di 'click' per controllare che tutto funzioni
 }
 
+// funzione per storare recensione e inviarla a nuova pagina
+
+function inviaForm(){
+    var messaggio= document.getElementById('textComment').value;
+    window.alert("Grazie per il tuo feedback, ci aiuta a crescere");
+}
+
+
+
+
+
 brightStars();                                             // chiamiamo la funzione per avviarla
+
+document.getElementById('inviaDati').addEventListener('click', inviaForm)

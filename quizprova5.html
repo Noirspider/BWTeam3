@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Quiz</title>
     <style>
         .correct {
@@ -50,8 +51,8 @@
                     <h1 class="rate-us-percentuale-risultato"></h1>
                     
                 </div>
-                <div>
-                    <div id="rate-us-grafico">grafico</div>
+                <div id="canvaContainer" style="width: 20%; min-width: 250px; display: flex;">
+                    <canvas id="rate-us-grafico" style="justify-content: center;"></canvas>
                 </div>
                 <div id="rate-us-right-wrong">
                     <h1 class="rate-us-sec-title">Wrong</h1>
@@ -215,16 +216,16 @@
             radioButton.addEventListener('click', () => checkAnswer(question, index)); // Aggiunge un event listener per gestire il click sul radio button.    
         });
         container.appendChild(containerAnswer);
-
+        
         const questionsCount= document.createElement("div");
         questionsCount.className = "questions-count"; 
         questionsCount.innerHTML = `QUESTION  ${index+1}<span>  /  ${questions.length} </span>`;
         container.appendChild(questionsCount);
         
-
-
-
-
+        
+        
+        
+        
         return container; // Restituisce il contenitore della domanda completo con le risposte.
         
     }
@@ -239,20 +240,20 @@
             if (radio.checked) { // Controlla se il radio button corrente è selezionato.
                 answerGiven = true; // Imposta la variabile a vero perché l'utente ha selezionato una risposta.
                 if (radio.value === question.correct_answer) { // Controlla se il valore del radio button corrisponde alla risposta corretta della domanda.
-                     //label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
+                    //label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
                     correctAnswersCount++; // Incrementa il contatore delle risposte corrette.
                 } else {
-                  //  label.classList.add('incorrect'); // Se non è corretta, aggiunge la classe 'incorrect' alla label, cambiandone il colore a rosso.
+                    //  label.classList.add('incorrect'); // Se non è corretta, aggiunge la classe 'incorrect' alla label, cambiandone il colore a rosso.
                 }
             } else if (radio.value === question.correct_answer) { // Se il radio button non è selezionato ma il suo valore corrisponde alla risposta corretta...
-              //  label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
+                //  label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
             }
         });
         if (answerGiven){
-         showNextQuestion()
-         ;// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
+            showNextQuestion()
+            ;// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
         }
-         
+        
     }
     
     
@@ -278,9 +279,47 @@
         <p class="rate-us-question"> ${correctAnswersCount}/${totalQuestion} questions</p>`;
         let printValue2 =  document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
         printValue2.innerHTML= `${parseInt(Math.round(totalWrongAnswers*100/totalQuestion))}%
-         <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
-
+        <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
         
+        var xValues = ["Correct", "Wrong"];
+        var yValues = [correctAnswersCount, totalWrongAnswers];
+        var barColors = [
+        "#97fdfd",
+        "#a6018b"
+        ];
+        
+        new Chart("rate-us-grafico", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                }
+            }
+        })
+        Chart.pluginService.register({
+            beforeDraw: function(chart) {
+                var width =
+                    height = chart.chart.height,
+                    ctx = chart.chart.ctx;
+                ctx.restore();
+                var fontSize = (height / 400).toFixed(2);
+                ctx.font =  fontSize + "em sans-serif";
+                ctx.textBaseline = "middle";
+                var text = `Congratrulations! You passed the exam.`,
+                    textX = Math.round((width - ctx.measureText(text).width) / 2),
+                    textY = height / 2;
+                ctx.fillText(text, textX, textY);
+                ctx.save();
+            }
+        })
         ; // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }
 }
@@ -336,107 +375,120 @@ let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 document.getElementById("app").innerHTML = `<div class="base-timer">
-<svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
-<g class="base-timer__circle">
-<circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-<path
-id="base-timer-path-remaining"
-stroke-dasharray="283"
-class="base-timer__path-remaining ${remainingPathColor}"
-d="
-  M 50, 50
-  m -45, 0
-  a 45,45 0 1,0 90,0
-  a 45,45 0 1,0 -90,0
-"
-></path> 
-</g>
-<text x="50" y="30" class="re-size" text-anchor="middle">SECONDI</text> 
-<text x="50" y="75" class="re-size" text-anchor="middle">RIMANENTI</text>
-</svg>
-<span id="base-timer-label" class="base-timer__label">  ${formatTime(
-    timeLeft
-)}</span>
-</div>
-`;
-
-
-function onTimesUp() {
-    clearInterval(timerInterval);
-}
-
-function startTimer() {
-    timerInterval = setInterval(() => {
-        timePassed = timePassed += 1;
-        timeLeft = TIME_LIMIT - timePassed;
-        document.getElementById("base-timer-label").innerHTML = formatTime(
-            timeLeft
-        );
-        setCircleDasharray();
-        setRemainingPathColor(timeLeft);
-
-        if (timeLeft === 0) {
-            onTimesUp();
-            showNextQuestion();
-        }
-    }, 1000);
-}
-
-function reset(){
-    clearInterval(timerInterval);
-    timePassed = 0;
-    timeLeft = TIME_LIMIT
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-            timeLeft
-        );
-        setCircleDasharray();
-        setRemainingPathColor(timeLeft);
-}
-
-function formatTime(time) {
-    let seconds = time % 61;
-
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
+    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+        <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+            <path
+            id="base-timer-path-remaining"
+            stroke-dasharray="283"
+            class="base-timer__path-remaining ${remainingPathColor}"
+            d="
+            M 50, 50
+            m -45, 0
+            a 45,45 0 1,0 90,0
+            a 45,45 0 1,0 -90,0
+            "
+            ></path> 
+        </g>
+        <text x="50" y="30" class="re-size" text-anchor="middle">SECONDI</text> 
+        <text x="50" y="75" class="re-size" text-anchor="middle">RIMANENTI</text>
+    </svg>
+    <span id="base-timer-label" class="base-timer__label">  ${formatTime(
+        timeLeft
+        )}</span>
+    </div>
+    `;
+    
+    
+    function onTimesUp() {
+        clearInterval(timerInterval);
     }
-
-    return `${seconds}`;
-}
-
-function setRemainingPathColor(timeLeft) {
-    const { alert, warning, info } = COLOR_CODES;
-    if (timeLeft <= alert.threshold) {
-        document
+    
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timePassed = timePassed += 1;
+            timeLeft = TIME_LIMIT - timePassed;
+            document.getElementById("base-timer-label").innerHTML = formatTime(
+            timeLeft
+            );
+            setCircleDasharray();
+            setRemainingPathColor(timeLeft);
+            
+            if (timeLeft === 0) {
+                onTimesUp();
+                showNextQuestion();
+            }
+        }, 1000);
+    }
+    
+    function reset(){
+        clearInterval(timerInterval);
+        timePassed = 0;
+        timeLeft = TIME_LIMIT
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+        timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+    }
+    
+    function formatTime(time) {
+        let seconds = time % 61;
+        
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        
+        return `${seconds}`;
+    }
+    
+    function setRemainingPathColor(timeLeft) {
+        const { alert, warning, info } = COLOR_CODES;
+        if (timeLeft <= alert.threshold) {
+            document
             .getElementById("base-timer-path-remaining")
             .classList.remove(warning.color);
-        document
+            document
             .getElementById("base-timer-path-remaining")
             .classList.add(alert.color);
-    } else if (timeLeft <= warning.threshold) {
-        document
+        } else if (timeLeft <= warning.threshold) {
+            document
             .getElementById("base-timer-path-remaining")
             .classList.remove(info.color);
-        document
+            document
             .getElementById("base-timer-path-remaining")
             .classList.add(warning.color);
+        }
     }
-}
-
-function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / TIME_LIMIT;
-    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
-
-function setCircleDasharray() {
-    const circleDasharray = `${(
-        calculateTimeFraction() * FULL_DASH_ARRAY
-    ).toFixed(0)} 283`;
-    document
-        .getElementById("base-timer-path-remaining")
-        .setAttribute("stroke-dasharray", circleDasharray);
-}
-
-</script>
+    
+    function calculateTimeFraction() {
+        const rawTimeFraction = timeLeft / TIME_LIMIT;
+        return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+    
+    function setCircleDasharray() {
+        const circleDasharray = `${(
+            calculateTimeFraction() * FULL_DASH_ARRAY
+            ).toFixed(0)} 283`;
+            document
+            .getElementById("base-timer-path-remaining")
+            .setAttribute("stroke-dasharray", circleDasharray);
+        }
+        
+        
+        /*-------------------------------------------- Prova Grafico a Ciambella ----------------------------------------------*/
+        
+        /*var arrayCanvasX = ["Correct", "Wrong"];
+        var arrayCanvasY = [correctAnswersCount, totalWrongAnswers]
+        
+        const colors = [
+        ""
+        ]
+        */
+        
+        
+    </script>
+    
 </body>
 
 </html>

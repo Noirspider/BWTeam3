@@ -1,31 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap" rel="stylesheet">
-    <title>Question</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Quiz</title>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div id="epicode-logo"></div>
-            <div id="timer"><!-- Appendere timer e dare dimensione --></div>
+            <div id="app"><!-- Appendere timer e dare dimensione --></div>
         </header>
         <main>
             <div id="boxQuestionAnswer">
-                <h1 id="questions">Domandona</h1>
-                <div class="containerAnswer">
-                    <!-- <div class="answer"> </div> Appendere questo div generato da js con class answer -->
+                <div id="quiz-container">
+                    <!--<div class="containerAnswer">
+                        <div class="answer"> </div> Appendere questo div generato da js con class answer 
+                    </div>
+                -->
                 </div>
             </div>
             <h5 id="thisQuestion"><span></span></h5>
+
+            <!-- Qui inizia il Risultato della Pagina-->
+
+            <div id="mostraIlRisultato">
+                <h1 class="rate-us-center" id="rate-us-title">Results</h1>
+                <h3 class="rate-us-center" id="rate-us-under-title">The summary of your answers:</h3>
+                <div id="rate-us-valutazione">
+
+                    <div id="rate-us-left-correct">
+                        <h1 class="rate-us-sec-title">Correct</h1>
+                        <h1 class="rate-us-percentuale-risultato"></h1>
+                    </div>
+
+                    <div id="canvaContainer">
+                        <canvas id="rate-us-grafico"></canvas>
+                        <div id="complimenti"></div>
+                    </div>
+
+                    <div id="rate-us-right-wrong">
+                        <h1 class="rate-us-sec-title">Wrong</h1>
+                        <h1 class="rate-us-percentuale-risultato"></h1>
+                    </div>
+                </div>
+                <div id="rate-us-rate">
+                    <button id="rate-us-button-rate">RATE US</button>
+
+                </div>
+            </div>
         </main>
     </div>
-    <script src="./js/quizprova5.js"></script>
+    <!-- qui finisce il risultato della pagina-->
+    <script src="js/paginaDomande.js"></script>
 </body>
 </html>

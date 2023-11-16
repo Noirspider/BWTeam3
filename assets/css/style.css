@@ -161,10 +161,16 @@ input{
     color:#a6018b;
 }
 
+.question-container {
+    display: none;           /*questa serve */
+    margin-bottom: 20px;
+}
+
 /*=================================== pagina di style Mattia ===========================================*/
 
 #mostraIlRisultato{
     display: none;
+    width: 100%;
 }
 
 
@@ -188,19 +194,15 @@ input{
 .rate-us-sec-title {
     margin: 0;
     padding: 8px;
-}
-
-#rate-us-valutazione {
-    display: flex;
-    justify-content: space-between;
+    font-size: 55px;
 }
 
 
-#rate-us-grafico {
+/*#rate-us-grafico {
     text-align: center;
     padding: 7%;
 }
-
+*/
 #rate-us-rate {
     text-align: center;
 }
@@ -230,8 +232,51 @@ input{
 #rate-us-valutazione {
     display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: space-around;    
 }
 
+#rate-us-grafico{
+    
+
+}
+
+#canvaContainer{
+    position: relative;
+    width: 75%;
+}
+#complimenti{
+    width: 40%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+}
+
+#rate-us-left-correct, #rate-us-right-content{
+    max-width: 195px;
+}
+
+.insideDonutText{
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2rem;
+}
+
+.insideDonutText span{
+    color: #00FFFF;
+    font-size: 1rem;
+}
+
+#complimenti p{
+    font-size: 0.8rem;
+}
+
+.insideDonutText #failedExam{
+    color: #a6018b;
+}
 
 /********************************************* ************************************************/
 
@@ -290,17 +335,4 @@ input{
     align-items: center;
     justify-content: center;
     font-size: 28px;
-}
-#canvaContainer{
-    position: relative;
-    
-
-}
-#complimenti{
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-
 }

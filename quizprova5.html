@@ -46,13 +46,15 @@
             <h1 class="rate-us-center" id="rate-us-title">Results</h1>
             <h3 class="rate-us-center" id="rate-us-under-title">The summary of your answers:</h3>
             <div id="rate-us-valutazione">
+                
                 <div id="rate-us-left-correct">
                     <h1 class="rate-us-sec-title">Correct</h1>
                     <h1 class="rate-us-percentuale-risultato"></h1>
                     
                 </div>
-                <div id="canvaContainer" style="width: 20%; min-width: 250px; display: flex;">
-                    <canvas id="rate-us-grafico" style="justify-content: center;"></canvas>
+                <div id="canvaContainer" style="width: 900px; min-width: 250px; display: flex; justify-content: space-around;">
+                    <canvas id="rate-us-grafico" style="justify-content: center; width:100%"></canvas>
+                    <div id="complimenti"></div>
                 </div>
                 <div id="rate-us-right-wrong">
                     <h1 class="rate-us-sec-title">Wrong</h1>
@@ -94,94 +96,79 @@
         correct_answer: "Final",
         incorrect_answers: ["Static", "Private", "Public"],
     },
-    {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "The logo for Snapchat is a Bell.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-    },
-    {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "Pointers were not used in the original C programming language; they were added later on in C++.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-    },
-    {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "What is the most preferred image format used for logos in the Wikimedia database?",
-        correct_answer: ".svg",
-        incorrect_answers: [".png", ".jpeg", ".gif"],
-    },
-    {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "In web design, what does CSS stand for?",
-        correct_answer: "Cascading Style Sheet",
-        incorrect_answers: [
-        "Counter Strike: Source",
-        "Corrective Style Sheet",
-        "Computer Style Sheet",
-        ],
-    },
-    {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "What is the code name for the mobile operating system Android 7.0?",
-        correct_answer: "Nougat",
-        incorrect_answers: [
-        "Ice Cream Sandwich",
-        "Jelly Bean",
-        "Marshmallow",
-        ],
-    },
-    {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "On Twitter, what is the character limit for a Tweet?",
-        correct_answer: "140",
-        incorrect_answers: ["120", "160", "100"],
-    },
-    {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "Linux was first created as an alternative to Windows XP.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-    },
-    {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "Linux was first created as an alternative to Windows XP.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-    },
-    {
-        category: "Science: Computers",
-        type: "boolean",
-        difficulty: "easy",
-        question: "Linux was first created as an alternative to Windows XP.",
-        correct_answer: "False",
-        incorrect_answers: ["True"],
-    },
-    {
-        category: "Science: Computers",
-        type: "multiple",
-        difficulty: "easy",
-        question: "Which programming language shares its name with an island in Indonesia?",
-        correct_answer: "Java",
-        incorrect_answers: ["Python", "C", "Jakarta"],
-    },
+    // {
+    //     category: "Science: Computers",
+    //     type: "boolean",
+    //     difficulty: "easy",
+    //     question: "The logo for Snapchat is a Bell.",
+    //     correct_answer: "False",
+    //     incorrect_answers: ["True"],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "boolean",
+    //     difficulty: "easy",
+    //     question: "Pointers were not used in the original C programming language; they were added later on in C++.",
+    //     correct_answer: "False",
+    //     incorrect_answers: ["True"],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "multiple",
+    //     difficulty: "easy",
+    //     question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    //     correct_answer: ".svg",
+    //     incorrect_answers: [".png", ".jpeg", ".gif"],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "multiple",
+    //     difficulty: "easy",
+    //     question: "In web design, what does CSS stand for?",
+    //     correct_answer: "Cascading Style Sheet",
+    //     incorrect_answers: [
+    //     "Counter Strike: Source",
+    //     "Corrective Style Sheet",
+    //     "Computer Style Sheet",
+    //     ],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "multiple",
+    //     difficulty: "easy",
+    //     question: "What is the code name for the mobile operating system Android 7.0?",
+    //     correct_answer: "Nougat",
+    //     incorrect_answers: [
+    //     "Ice Cream Sandwich",
+    //     "Jelly Bean",
+    //     "Marshmallow",
+    //     ],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "multiple",
+    //     difficulty: "easy",
+    //     question: "On Twitter, what is the character limit for a Tweet?",
+    //     correct_answer: "140",
+    //     incorrect_answers: ["120", "160", "100"],
+    // },
+    // {
+    //     category: "Science: Computers",
+    //     type: "boolean",
+    //     difficulty: "easy",
+    //     question: "Linux was first created as an alternative to Windows XP.",
+    //     correct_answer: "False",
+    //     incorrect_answers: ["True"],
+    // },
+
+    // {
+    //     category: "Science: Computers",
+    //     type: "multiple",
+    //     difficulty: "easy",
+    //     question: "Which programming language shares its name with an island in Indonesia?",
+    //     correct_answer: "Java",
+    //     incorrect_answers: ["Python", "C", "Jakarta"],
+    // },
     ];
     
     let currentQuestionIndex = -1;
@@ -280,7 +267,13 @@
         let printValue2 =  document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
         printValue2.innerHTML= `${parseInt(Math.round(totalWrongAnswers*100/totalQuestion))}%
         <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
-        
+        const timer = document.getElementById("app");
+        timer.style.display = "none";
+        // inizio commento
+        let commentone = document.getElementById("complimenti")
+        commentone.innerHTML =`complimenti sei arrivato <br> fino alla fine`
+
+        //fine commento
         var xValues = ["Correct", "Wrong"];
         var yValues = [correctAnswersCount, totalWrongAnswers];
         var barColors = [
@@ -297,29 +290,37 @@
                     data: yValues
                 }]
             },
+            
             options: {
+                cutoutPercentage: 80,
                 responsive: true,
+                maintainAspectRatio: true,
                 legend: {
                     display: false
                 }
             }
         })
-        Chart.pluginService.register({
-            beforeDraw: function(chart) {
-                var width =
-                    height = chart.chart.height,
-                    ctx = chart.chart.ctx;
-                ctx.restore();
-                var fontSize = (height / 400).toFixed(2);
-                ctx.font =  fontSize + "em sans-serif";
-                ctx.textBaseline = "middle";
-                var text = `Congratrulations! You passed the exam.`,
-                    textX = Math.round((width - ctx.measureText(text).width) / 2),
-                    textY = height / 2;
-                ctx.fillText(text, textX, textY);
-                ctx.save();
-            }
-        })
+        // Chart.pluginService.register({
+        //     beforeDraw: function(chart) {
+        //         var width = chart.chart.width
+        //             height = chart.chart.height,
+        //             ctx = chart.chart.ctx;
+        //         ctx.restore();
+        //         var fontSize = (height / 400).toFixed(2);
+        //         ctx.font =  fontSize + "em sans-serif";
+        //         ctx.textBaseline = "middle";
+        //         var text = `Congratrulations! You passed the exam.`,
+        //             textX = Math.round((width - ctx.measureText(text).width) / 2),
+        //             textY = height / 2;
+        //         ctx.fillText(text, textX, textY);
+                
+        //         var text2 = `Congratrulations! You passed the exam.`,
+        //             textX2 = Math.round((width - ctx.measureText(text).width) / 4),
+        //             textY2 = height / 4;
+        //         ctx.fillText(text2, textX2, textY2);
+        //         ctx.save();
+        //     }
+        // })
         ; // Se non ci sono altre domande, mostra un messaggio con il numero di risposte corrette.
     }
 }

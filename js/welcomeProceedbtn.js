@@ -9,6 +9,8 @@ function redirect() {
     window.location.href = "../PaginaDomande.html"
 }
 
+
+
 function checkTheFlag (){
     if(checkBox.checked){
         document.getElementById("welcomeProceedBtn").onclick(redirect())
@@ -16,7 +18,6 @@ function checkTheFlag (){
         alert("Spunta la checkbox prima di continuare")
     }
 }
- 
 
 window.onload= function(){
     let form = document.querySelector("form");

@@ -1,3 +1,8 @@
+function handleSubmit(e) {
+    e.preventDefault();
+    go();
+}
+
 const questions = [{
     category: "Science: Computers",
     type: "multiple",
@@ -291,13 +296,7 @@ function showNextQuestion() {
             
             
             
-            window.onload = function(){
-                questions.forEach((question, index) => { // Cicla su ogni domanda nell'array 'questions'.
-                const questionElement = createQuestionElement(question, index); // Crea un elemento DOM per la domanda attuale.
-                document.getElementById('quiz-container').appendChild(questionElement); // Aggiunge l'elemento della domanda al contenitore del quiz.
-            });
-            showNextQuestion();   
-        }
+            
         
         
         
@@ -439,8 +438,22 @@ function showNextQuestion() {
                 .getElementById("base-timer-path-remaining")
                 .setAttribute("stroke-dasharray", circleDasharray);
             }
+            function redirect() {
+                window.location.href = "../PaginaDomande.html"
+            }
+            function go(){
+                document.getElementById("rate-us-button-rate").onclick(redirect())
+            }
             
-            
+            window.onload = function(){
+                questions.forEach((question, index) => { // Cicla su ogni domanda nell'array 'questions'.
+                const questionElement = createQuestionElement(question, index); // Crea un elemento DOM per la domanda attuale.
+                document.getElementById('quiz-container').appendChild(questionElement); // Aggiunge l'elemento della domanda al contenitore del quiz.
+            });
+                showNextQuestion();  
+                let form = document.querySelector("form");
+                form.addEventListener("submit", handleSubmit); 
+        }
             /*-------------------------------------------- Prova Grafico a Ciambella ----------------------------------------------*/
             
             /*var arrayCanvasX = ["Correct", "Wrong"];

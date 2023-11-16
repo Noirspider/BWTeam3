@@ -439,7 +439,7 @@ function showNextQuestion() {
                 .setAttribute("stroke-dasharray", circleDasharray);
             }
             function redirect() {
-                window.location.href = "../PaginaDomande.html"
+                window.location.href = "../PaginaGradimento.html"
             }
             function go(){
                 document.getElementById("rate-us-button-rate").onclick(redirect())

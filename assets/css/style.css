@@ -204,7 +204,8 @@ input{
 }
 */
 #rate-us-rate {
-    text-align: center;
+   display: flex;
+   justify-content: center;
 }
 
 #rate-us-button-rate {

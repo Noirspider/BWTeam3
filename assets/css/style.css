@@ -88,23 +88,21 @@ form span{
     
 }
 
-.answer{
 
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
 
 label{
+
+    text-align: center;
+    font-weight: 300; 
     width: 30%;
     margin-top: 30px;
     color: white;
     font-family: 'Outfit', sans-serif;
     border-radius: 50px;
-    border-top:solid  3px white;
-    border-left:solid  3px linear-gradient(top #e6dddd right, #e6dddd 0%, #9c9ea0 100%);
-    border-bottom:solid  3px rgba(255, 255, 255, 0.418);
-    border-right:solid  3px rgba(255, 255, 255, 0.219);
+    border-top:solid  4px white;
+    border-left:solid  4px rgba(255, 255, 255, 0.507);
+    border-bottom:solid  4px rgba(255, 255, 255, 0.418);
+    border-right:solid  4px rgba(255, 255, 255, 0.219);
     padding:20px 50px;
     background-color: rgba(240, 248, 255, 0.151);
     cursor: pointer;
@@ -138,7 +136,7 @@ label:hover{
     line-height: 1;
     text-align: center;
     margin-bottom: 60px;
-    font-size: 60px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
 }

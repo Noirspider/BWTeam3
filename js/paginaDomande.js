@@ -118,7 +118,8 @@ function createQuestionElement(question, index) {
     const containerAnswer = document.createElement("div");
     containerAnswer.className = "containerAnswer";   
     allAnswers.forEach(answer => { // Cicla su tutte le risposte per creare i radio button.
-        const label = document.createElement('label'); // Crea un elemento label, utile per accessibilità e styling.
+        const label = document.createElement('label');  // Crea un elemento label, utile per accessibilità e styling.
+      //  label.setAttribute("onclick", click()) appena scrittaaaaaaaaaaaaaaa
         const radioButton = document.createElement('input'); // Crea un radio button per la risposta.
         radioButton.type = 'radio';
         radioButton.name = 'question-' + index; // Assegna un nome basato sull'indice della domanda, così tutti i radio buttons sono raggruppati.
@@ -152,7 +153,7 @@ function checkAnswer(question, index) {
         radio.disabled = true; // Disabilita il radio button per impedire ulteriori selezioni dopo che una risposta è stata data.
         const label = radio.parentNode; // Ottiene l'elemento label che è il genitore diretto del radio button.
         if (radio.checked) { // Controlla se il radio button corrente è selezionato.
-            answerGiven = true; // Imposta la variabile a vero perché l'utente ha selezionato una risposta.
+            answerGiven = true  // Imposta la variabile a vero perché l'utente ha selezionato una risposta.
             if (radio.value === question.correct_answer) { // Controlla se il valore del radio button corrisponde alla risposta corretta della domanda.
                 //label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
                 correctAnswersCount++; // Incrementa il contatore delle risposte corrette.
@@ -167,9 +168,11 @@ function checkAnswer(question, index) {
         showNextQuestion()
         ;// Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.
     }
-    
-}
 
+}
+// funzione inutile e sbagliata     function click() {
+// funzione inutile e sbagliata     answerGiven.classList.add("clickQuestion").addEventListener('click', label);
+// funzione inutile e sbagliata } 
 
 
 function showNextQuestion() {

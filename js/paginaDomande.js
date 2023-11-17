@@ -349,7 +349,12 @@ function setCircleDasharray() {
         .getElementById("base-timer-path-remaining")
         .setAttribute("stroke-dasharray", circleDasharray);
 }
-
+function redirect() {
+    window.location.href = "../PaginaGradimento.html"
+}
+    function go(){
+    document.getElementById("rate-us-button-rate").onclick(redirect())
+}
 window.onload = function () {
     questions.forEach((question, index) => { // Cicla su ogni domanda nell'array 'questions'.
         const questionElement = createQuestionElement(question, index); // Crea un elemento DOM per la domanda attuale.

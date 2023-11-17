@@ -200,6 +200,10 @@ input{
    justify-content: center;
 }
 
+#rate-us-grafico{
+    min-width: 576px;
+}
+
 #rate-us-button-rate {
     background-color: transparent;
     padding: 15px 60px;

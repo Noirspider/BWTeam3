@@ -62,6 +62,7 @@ form{
 
 form div{
     display: flex;
+    align-items: center;
 }
 
 form button{
@@ -88,9 +89,7 @@ form span{
     
 }
 
-
-
-label{
+label:not(#checkmark){
 
     text-align: center;
     font-weight: 300; 
@@ -404,4 +403,23 @@ textarea:focus{
 #inviaDati{
     cursor: pointer;
 
+}
+input[type="checkbox"]{ 
+    appearance: none;       
+    height: 1.1rem;
+    width: 1.1rem;
+    box-shadow:  0 0 0 2px black;
+    border: 2px solid white;
+    cursor: pointer;
+    vertical-align: bottom;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1em;
+}
+input[type="checkbox"]:checked::before{
+    content: "✓";
+    color: white;
+    height: 1.2rem;
+    width: 0.6rem;    
 }

@@ -274,6 +274,12 @@ let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 
+const colorTimer = {
+    ciano: {
+        color: "cyan",
+    }
+};
+
 document.getElementById("app").innerHTML = `<div class="base-timer">
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
         <g class="base-timer__circle">
@@ -281,7 +287,8 @@ document.getElementById("app").innerHTML = `<div class="base-timer">
             <path
             id="base-timer-path-remaining"
             stroke-dasharray="283"
-            class="base-timer__path-remaining" 
+            class="base-timer__path-remaining " 
+            stroke="${colorTimer.ciano.color}"
             d="
             M 50, 50
             m -45, 0

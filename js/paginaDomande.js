@@ -139,7 +139,7 @@ function createQuestionElement(question, index) {
 }
 
 /***************FUNZIONE PER CONTROLLARE SE LA RISPOSTA DATA SIA CORRETTA ED INCREMENTARE IL CONTATORE DELLE RISPOSTE CORRETTE*****************/ 
-function checkAnswer(question, index) {
+ function checkAnswer(question, index) {
     const radios = document.getElementsByName('question-' + index); // Ottiene tutti gli elementi input di tipo radio che hanno il nome basato sull'indice della domanda corrente.
     let answerGiven = false; // Inizializza una variabile per tracciare se una risposta è stata data.
     radios.forEach(radio => { // Cicla su ogni elemento radio trovato precedentemente.
@@ -148,14 +148,9 @@ function checkAnswer(question, index) {
         if (radio.checked) { // Controlla se il radio button corrente è selezionato.
             answerGiven = true; // Imposta la variabile a vero perché l'utente ha selezionato una risposta.
             if (radio.value === question.correct_answer) { // Controlla se il valore del radio button corrisponde alla risposta corretta della domanda.
-                //label.classList.add('correct'); // Se è corretta, aggiunge la classe 'correct' alla label, cambiandone il colore a verde.
                 correctAnswersCount++; // Incrementa il contatore delle risposte corrette.
-            } else {
-                //  label.classList.add('incorrect'); // Se non è corretta, aggiunge la classe 'incorrect' alla label, cambiandone il colore a rosso.
             }
-        } else if (radio.value === question.correct_answer) { // Se il radio button non è selezionato ma il suo valore corrisponde alla risposta corretta...
-            //  label.classList.add('correct'); // ...aggiunge la classe 'correct' alla label per indicare la risposta corretta agli utenti.
-        }
+        } 
     });
     if (answerGiven) {
         showNextQuestion(); // Se una risposta è stata data, chiama la funzione per mostrare la prossima domanda.

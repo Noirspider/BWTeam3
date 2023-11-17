@@ -311,18 +311,7 @@ input{
     transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
-}
-
-.base-timer__path-remaining.green {
-    color: rgb(00, 255, 255);
-}
-
-.base-timer__path-remaining.orange {
-    color: rgb(00, 255, 255);
-}
-
-.base-timer__path-remaining.red {
-    color: rgb(00, 255, 255);
+    stroke: cyan;
 }
 
 .base-timer__label {

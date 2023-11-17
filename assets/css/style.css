@@ -302,7 +302,6 @@ input{
 
 .base-timer__path-remaining {
     stroke-width: 7px;
-    stroke-linecap: round;
     transform: rotate(90deg);
     transform-origin: center;
     transition: 1s linear all;

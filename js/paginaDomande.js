@@ -181,11 +181,22 @@ function showNextQuestion() {
         let superamentoTest = parseInt(Math.round(correctAnswersCount * 100 / totalQuestion));
         let printValue1 = document.querySelector("#rate-us-left-correct .rate-us-percentuale-risultato");
         console.log(printValue1);
-        printValue1.innerHTML = `${(correctAnswersCount * 100 / totalQuestion).toFixed(1)}% 
-        <p class="rate-us-question">${correctAnswersCount}/${totalQuestion} questions</p>`;
+        let percentualeCorrette = (correctAnswersCount * 100 / totalQuestion);
+let displayPercentualeCorrette = (percentualeCorrette % 1 === 0) ? percentualeCorrette.toFixed(0) : percentualeCorrette.toFixed(1);
+printValue1.innerHTML = `${displayPercentualeCorrette}% 
+    <p class="rate-us-question">${correctAnswersCount}/${totalQuestion} questions</p>`;
         let printValue2 = document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
-        printValue2.innerHTML = `${((totalWrongAnswers*100/totalQuestion).toFixed(1))}%
-        <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
+
+        let percentualeSbagliate = (totalWrongAnswers * 100 / totalQuestion);
+        let displayPercentualeSbagliate = (percentualeSbagliate % 1 === 0) ? percentualeSbagliate.toFixed(0) : percentualeSbagliate.toFixed(1);
+        printValue2.innerHTML = `${displayPercentualeSbagliate}% 
+            <p class="rate-us-question">${totalWrongAnswers}/${totalQuestion} questions</p>`;
+
+
+
+
+
+
         const timer = document.getElementById("app");
         timer.style.display = "none";
         // CONDIZIONE: SE LE RISPOSTE CORRETTE SONO MAGGIORI D

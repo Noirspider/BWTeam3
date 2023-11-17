@@ -119,7 +119,6 @@ function createQuestionElement(question, index) {
     containerAnswer.className = "containerAnswer";   
     allAnswers.forEach(answer => { // Cicla su tutte le risposte per creare i radio button.
         const label = document.createElement('label');  // Crea un elemento label, utile per accessibilità e styling.
-      //  label.setAttribute("onclick", click()) appena scrittaaaaaaaaaaaaaaa
         const radioButton = document.createElement('input'); // Crea un radio button per la risposta.
         radioButton.type = 'radio';
         radioButton.name = 'question-' + index; // Assegna un nome basato sull'indice della domanda, così tutti i radio buttons sono raggruppati.
@@ -170,10 +169,6 @@ function checkAnswer(question, index) {
     }
 
 }
-// funzione inutile e sbagliata     function click() {
-// funzione inutile e sbagliata     answerGiven.classList.add("clickQuestion").addEventListener('click', label);
-// funzione inutile e sbagliata } 
-
 
 function showNextQuestion() {
     

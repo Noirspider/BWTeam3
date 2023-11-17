@@ -239,7 +239,15 @@ function showNextQuestion() {
                 "#a6018b",
                 "#97fdfd"
             ];
-
+            const ShadowPlugin = {
+                beforeDraw: (chart) => {
+                  const { ctx } = chart;
+                  ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+                  ctx.shadowBlur = 10;
+                  ctx.shadowOffsetX = 5;
+                  ctx.shadowOffsetY = 5;
+                },
+              };
             new Chart("rate-us-grafico", {
                 type: "doughnut",
                 data: {
@@ -250,7 +258,7 @@ function showNextQuestion() {
                         data: yValues
                     }]
                 },
-
+                plugins:[ShadowPlugin],
                 options: {
                     cutoutPercentage: 75,
                     responsive: true,

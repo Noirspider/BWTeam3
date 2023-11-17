@@ -37,7 +37,7 @@ h1 {
 }
 
 #boxQuestionAnswer{
-    margin-top: 3em;
+    margin-top: 8em;
 }
 
 h2{
@@ -135,7 +135,7 @@ label:hover{
 .questions{
     line-height: 1;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     font-size: 40px;
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
@@ -172,6 +172,9 @@ input{
     width: 100%;
 }
 
+#app {
+    float: right;
+    }
 
 
 .rate-us-center {
@@ -296,30 +299,19 @@ input{
 }
 
 .base-timer__path-elapsed {
-    stroke-width: 7px;
+    stroke-width: 10px;
     stroke: grey;
+    opacity: 0.3;
 }
 
 .base-timer__path-remaining {
-    stroke-width: 7px;
-    stroke-linecap: round;
+    stroke-width: 10px;
     transform: rotate(90deg);
     transform-origin: center;
     transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
-}
-
-.base-timer__path-remaining.green {
-    color: rgb(00, 255, 255);
-}
-
-.base-timer__path-remaining.orange {
-    color: rgb(00, 255, 255);
-}
-
-.base-timer__path-remaining.red {
-    color: rgb(00, 255, 255);
+    stroke: cyan;
 }
 
 .base-timer__label {

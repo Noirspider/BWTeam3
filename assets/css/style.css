@@ -65,14 +65,17 @@ form div{
     align-items: center;
 }
 
-form button{
+form #welcomeProceedBtn{
     border-style: none;
     background-color: #00FFFF;
     box-shadow: 0 0 40px #00FFFF;
-    padding: 1.5em 4em;
+    padding: 1.2em 3.5em;
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
+}
+#welcomeProceedBtn > span {
+    font-size: 1.2rem;
 }
 
 form span{

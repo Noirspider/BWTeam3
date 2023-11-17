@@ -2,29 +2,25 @@
 //     vostoStella: 0,
 //     testo : "",
 // }
-let vostoStella = 0;  
+let vostoStella = 0;
 function brightStars() {                                    //dichiarazione funzione per illuminare le stelle                      
     let click = false;
-                                   // dichiariamo la variabile "click" per differenziare gli eventi prima o dopo il click su una stella
+    // dichiariamo la variabile "click" per differenziare gli eventi prima o dopo il click su una stella
     let stelle = document.querySelectorAll('.star');        // dichiariamo una variabile chiamata stelle e la riempiamo con tutti gli elementi con la classe
     let stelleArray = Array.from(stelle);                   // usiamo il costruttore Array. per creare un stelleArray con dentro tutti gli elementi della variabile  stelle dichiarata sopra
-    stelle.forEach((stella,index,)=>{
-        stella.addEventListener("click", function(){
-            click = true;
-            vostoStella=index +1;
-            stelle.forEach((e,i,stelleArray)=>{
-                if(i<= index){
+    stelle.forEach((stella, index,) => {                       // for each per ogni elemento classe .star 
+        stella.addEventListener("click", function () {           // mi metto in ascolto e al click parte la funzione
+            click = true;                         // flag usata pper controllare se c'e stato click e quindi non dare più priorità al mouse over
+            vostoStella = index + 1;                 //memorizzo quante stelle ha dato lo user
+            stelle.forEach((e, i, stelleArray) => {     // faccio partire nuovamente un foreach sulla mia html collection e controllo se l'indice della scelta è minore o uguale all'indice precedente allora aggiunge a tutte le stelle precedenti la classe active altrimenti le rimuove.
+                if (i <= index) {                                   
                     stelleArray[i].classList.add('active');
-                }else{
+                } else {
                     stelleArray[i].classList.remove('active');
                 }
-
             })
-
         })
     })
-
-
     stelleArray.forEach((stella, index) => {                   // Per ogni elemento nell'array stelleArray, conosciuto come 'stella' e 'index' (che rappresenta l'indice)
         stella.addEventListener("mouseout", function () {      // Aggiungi un listener per l'evento di uscita del mouse dall'elemento 'stella'
             if (click === false) {                             // Se 'click' è falso (non è stato fatto un click)
@@ -49,11 +45,11 @@ function brightStars() {                                    //dichiarazione funz
 
 function inviaForm() {
     var messaggio = document.getElementById('textComment').value;
-    var recensione ={
+    var recensione = {
         voto: vostoStella,
-        testo : messaggio,
+        testo: messaggio,
     };
-    return alert("Grazie per il tuo feeddback:\n la tua valutazione è:  " +recensione.voto+ "\n la tua recensione è:\n"+ recensione.testo);
+    return alert("Grazie per il tuo feeddback:\n la tua valutazione è:  " + recensione.voto + "\n la tua recensione è:\n" + recensione.testo);
 }
 brightStars();                                           // chiamiamo la funzione per avviarla
 document.getElementById('inviaDati').addEventListener('click', inviaForm)

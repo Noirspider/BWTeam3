@@ -1,15 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap');
 
-body{
+body, .rate-us-sec-title, .rate-us-percentuale-risultato, .rate-us-question{
     margin: 0;
+}
+.rate-us-sec-title, .rate-us-percentuale-risultato{
+    padding: 8px;
+}
+.questions-count, .questions-count span, #rate-us-under-title, #rate-us-button-rate, .rate-us-question{
+    font-size: 20px;
+}
+form #welcomeProceedBtn, button, .insideDonutText span{
+    font-size: 1rem;
+}
+body, #thisQuestion, #thisQuestion span{
+    font-size: 16px;
+}
+body, h1, .rate-us-question{
+    font-weight: 300;
+} 
+form #welcomeProceedBtn, button, form span, #rate-us-button-rate, .insideDonutText, #rate-us-title, .rate-us-percentuale-risultato{
+    font-weight: 700;
+}
+.questions-count, .questions-count span, h3, label:not(#checkmark){
+    font-weight: 400;
+}
+label:not(#checkmark), #thisQuestion, .questions, .questions-count, .rate-us-center, #rate-us-valutazione, .centeredText, div#stars, #formFeedback div:last-child{
+    text-align: center;
+}
+form #welcomeProceedBtn, button, label:not(#checkmark), #stars svg, #inviaDati, input[type="checkbox"]{
+    cursor:pointer;
+}
+form, form div, #rate-us-valutazione, .base-timer__label{
+    display:flex;
+    align-items: center;
+}
+.base-timer, .base-timer__label{
+    height: 100px;
+    width: 100px;
+}
+#rate-us-valutazione, .containerAnswer {
+    justify-content: space-around;    
+}
+input[type="checkbox"]:checked::before, body, label:not(#checkmark), #thisQuestion, .questions, .questions-count, #rate-us-button-rate, h3, textarea:focus{
+    color: white;
+}
+h3, .re-size, body{
+    font-family: 'Inter', sans-serif;
+}
+h1, h2, label:not(#checkmark), #thisQuestion, .questions, .questions-count{
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
     background-image: url(../img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
     box-sizing: border-box;
 }
 
@@ -18,7 +64,6 @@ body{
     min-width: 768px;
     width: 50%;
     margin: auto
-    
 }
 
 #epicode-logo{
@@ -31,8 +76,6 @@ body{
 
 h1 {
     font-size: 60px; 
-    font-weight: 300;
-    font-family: 'Outfit', sans-serif;
     line-height: 0.8em;
 }
 
@@ -43,7 +86,6 @@ h1 {
 h2{
     color: #d20094;
     font-size: 32px;
-    font-family: 'Outfit', sans-serif;
 }
 
 ul{
@@ -55,14 +97,7 @@ ul{
 form{
     margin-top: 5em;
     height: fit-content;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-form div{
-    display: flex;
-    align-items: center;
 }
 
 form #welcomeProceedBtn, button{
@@ -70,9 +105,6 @@ form #welcomeProceedBtn, button{
     background-color: #00FFFF;
     box-shadow: 0 0 40px #00FFFF;
     padding: 1.2em 3.5em;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
 }
 #welcomeProceedBtn > span {
     font-size: 1.2rem;
@@ -80,32 +112,21 @@ form #welcomeProceedBtn, button{
 
 form span{
     font-size: 0.85rem;
-    font-weight: 700;
 }
 
 .containerAnswer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
 }
 
 label:not(#checkmark){
-    text-align: center;
-    font-weight: 300; 
     width: 30%;
     margin-top: 30px;
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 500;
     border-radius: 50px;
-    border-top:solid  4px white;
-    border-left:solid  4px rgba(255, 255, 255, 0.507);
-    border-bottom:solid  4px rgba(255, 255, 255, 0.418);
-    border-right:solid  4px rgba(255, 255, 255, 0.219);
+    border: 4px solid; 
+    border-color: white rgba(255, 255, 255, 0.507) rgba(255, 255, 255, 0.418) rgba(255, 255, 255, 0.219);
     padding:20px 50px;
     background-color: rgba(240, 248, 255, 0.151);
-    cursor: pointer;
 }
 
 label:hover{ 
@@ -114,25 +135,17 @@ label:hover{
 
 #thisQuestion{ 
     font-stretch: expanded;
-    text-align: center;
-    font-size: 16px;
     margin-top: 120px;
-    color: white;
-    font-family: 'Outfit', sans-serif;
 }
 
 #thisQuestion span{
     color:#a6018b;
-    font-size: 16px;
 }
 
 .questions{
     line-height: 1;
-    text-align: center;
     margin-bottom: 50px;
     font-size: 40px;
-    color: rgb(255, 255, 255);
-    font-family: 'Outfit', sans-serif;
 }
 
 input{
@@ -140,28 +153,19 @@ input{
 }
 
 .questions-count{
-    font-weight: 400;
     letter-spacing: 3px;
     font-stretch: expanded;
-    text-align: center;
-    font-size: 20px;
     margin-top: 120px;
-    color: white;
-    font-family: 'Outfit', sans-serif;
-
 }
+
 .questions-count span{
-    font-size: 20px;
-    font-weight: 400;
     color:#a6018b;
 }
 
 .question-container {
-    display: none;           /*questa serve */
+    display: none;           
     margin-bottom: 20px;
 }
-
-/*=================================== pagina di style Mattia ===========================================*/
 
 #mostraIlRisultato{
     display: none;
@@ -172,26 +176,17 @@ input{
     float: right;
     }
 
-
 .rate-us-center {
-    text-align: center;
     margin: 10px;
 } 
-
-#rate-us-title {
-    font-weight: bold;
-}
 
 #rate-us-under-title {
     font-weight: normal;
     letter-spacing: 2px;
-    font-size: 20px;
     margin-bottom: 50px;
 }
 
 .rate-us-sec-title {
-    margin: 0;
-    padding: 8px;
     font-size: 55px;
 }
 
@@ -207,30 +202,8 @@ input{
 #rate-us-button-rate {
     background-color: transparent;
     padding: 15px 60px;
-    color: white;
     border: 2px solid white;
-    font-size: 20px;
-    font-weight: 700;
     margin: 30px;
-}
-
-.rate-us-percentuale-risultato {
-    font-weight: bold;
-    margin: 0;
-    padding: 8px;
-}
-
-.rate-us-question {
-    font-size: 20px;
-    font-weight: 300;
-    margin: 0;
-}
-
-#rate-us-valutazione {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-around;    
 }
 
 #canvaContainer{
@@ -253,13 +226,11 @@ input{
 
 .insideDonutText{
     font-size: 1.2rem;
-    font-weight: 700;
     line-height: 1.2rem;
 }
 
 .insideDonutText span{
     color: #00FFFF;
-    font-size: 1rem;
 }
 
 #complimenti p{
@@ -270,18 +241,12 @@ input{
     color: #a6018b;
 }
 
-/********************************************* ************************************************/
-
 .base-timer {
     position: relative;
-    width: 100px;
-    height: 100px;
 }
 
 .re-size {
     font-size: 7px;
-    color: #EFE9F0;
-    font-family: 'Inter', sans-serif;
 }
 
 .base-timer__circle {
@@ -305,48 +270,20 @@ input{
 
 .base-timer__label {
     position: absolute;
-    width: 100px;
-    height: 100px;
     top: 0;
-    display: flex;
-    align-items: center;
     justify-content: center;
     font-size: 28px;
 }
-/* -----------------------FORMATTAZIONE HACHIM----------------------------- */
-/* modifiche mie su h3  Hachim*/
-h3{
-    color: white;
-    /* font-size: 32px; */
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-}
-/* formattazione centrale */
-.centeredText{
-    text-align: center;
-}
-/* formattazione stelle margine spazi hachim */
+
 #stars{
     margin: 1em 0;
     margin-bottom: 2em;
 }
-/* messo il puntatore */
-#stars svg{
-    cursor: pointer;
-}
-div#stars{
-    text-align: center;
-}
 
-/* animazione al passaggio del mouse da implementare bene su js  hachim*/
-/* .star:hover{
-    fill: #00FFFF;
-} */
 .active{
     fill: #00FFFF;
 }
 
-/* formattazione text area della chat hachim */
 textarea{
     width: 95%;
     height: 20px;
@@ -356,13 +293,14 @@ textarea{
     border-bottom: 2px solid #d20094;
     margin-bottom: 3em;
 }
+
 textarea::placeholder{
     font-family: 'Inter', 'sans-serif';
     padding-inline-start: 20px;
 }
+
 textarea:focus{
     outline: none;
-    color: white;
     font-family: 'Inter', 'sans-serif';
 }
 
@@ -370,19 +308,10 @@ textarea:focus{
     margin-top: 5em;
     height: fit-content;
     display: block;
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: space-between; */
 }
 
-/* il bottone della pagina feedback deve essere centrale */
 #formFeedback div:last-child{
     display: block;
-    text-align: center;
-}
-
-#inviaDati{
-    cursor: pointer;
 }
 
 input[type="checkbox"]{ 
@@ -391,7 +320,6 @@ input[type="checkbox"]{
     width: 1.1rem;
     box-shadow:  0 0 0 2px black;
     border: 2px solid white;
-    cursor: pointer;
     vertical-align: bottom;
     display: inline-flex;
     align-items: center;
@@ -401,7 +329,6 @@ input[type="checkbox"]{
 
 input[type="checkbox"]:checked::before{
     content: "✓";
-    color: white;
     height: 1.2rem;
     width: 0.6rem;    
 }

@@ -113,7 +113,6 @@ function createQuestionElement(question, index) {
     if (!allAnswers.includes(question.correct_answer)) {
         allAnswers.push(question.correct_answer); // Se la risposta corretta non è presente, la aggiunge all'array.
     }
-
     allAnswers.sort(() => Math.random() - 0.5); // Mescola l'array delle risposte per visualizzarle in ordine casuale.
     const containerAnswer = document.createElement("div");
     containerAnswer.className = "containerAnswer";
@@ -130,18 +129,11 @@ function createQuestionElement(question, index) {
         radioButton.addEventListener('click', () => checkAnswer(question, index)); // Aggiunge un event listener per gestire il click sul radio button.    
     });
     container.appendChild(containerAnswer);
-
     const questionsCount = document.createElement("div");
     questionsCount.className = "questions-count";
     questionsCount.innerHTML = `QUESTION  ${index+1}<span>  /  ${questions.length} </span>`;
     container.appendChild(questionsCount);
-
-
-
-
-
     return container; // Restituisce il contenitore della domanda completo con le risposte.
-
 }
 
 
@@ -186,14 +178,14 @@ function showNextQuestion() {
         mostraRisultato.style.display = "block";
         const totalQuestion = questions.length;
         const totalWrongAnswers = totalQuestion - correctAnswersCount;
-        let printValue1 = document.querySelector("#rate-us-left-correct .rate-us-percentuale-risultato");
-        console.log(printValue1)
         let superamentoTest = parseInt(Math.round(correctAnswersCount * 100 / totalQuestion));
-        printValue1.innerHTML = `${parseInt(Math.round(correctAnswersCount*100/totalQuestion))}% 
-    <p class="rate-us-question"> ${correctAnswersCount}/${totalQuestion} questions</p>`;
+        let printValue1 = document.querySelector("#rate-us-left-correct .rate-us-percentuale-risultato");
+        console.log(printValue1);
+        printValue1.innerHTML = `${(correctAnswersCount * 100 / totalQuestion).toFixed(1)}% 
+        <p class="rate-us-question">${correctAnswersCount}/${totalQuestion} questions</p>`;
         let printValue2 = document.querySelector("#rate-us-right-wrong .rate-us-percentuale-risultato");
-        printValue2.innerHTML = `${parseInt(Math.round(totalWrongAnswers*100/totalQuestion))}%
-    <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
+        printValue2.innerHTML = `${((totalWrongAnswers*100/totalQuestion).toFixed(1))}%
+        <p class="rate-us-question"> ${totalWrongAnswers}/${totalQuestion} questions</p>`;
         const timer = document.getElementById("app");
         timer.style.display = "none";
         // CONDIZIONE: SE LE RISPOSTE CORRETTE SONO MAGGIORI D

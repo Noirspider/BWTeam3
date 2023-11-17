@@ -75,8 +75,6 @@ form button{
     cursor: pointer;
 }
 
-
-
 form span{
     font-size: 0.85rem;
     font-weight: 700;
@@ -90,7 +88,6 @@ form span{
 }
 
 label:not(#checkmark){
-
     text-align: center;
     font-weight: 300; 
     width: 30%;
@@ -113,20 +110,17 @@ label:hover{
 }
 
 #thisQuestion{ 
-
     font-stretch: expanded;
     text-align: center;
     font-size: 16px;
     margin-top: 120px;
     color: white;
     font-family: 'Outfit', sans-serif;
-
 }
 
 #thisQuestion span{
     color:#a6018b;
     font-size: 16px;
-
 }
 
 .questions{
@@ -198,12 +192,6 @@ input{
     font-size: 55px;
 }
 
-
-/*#rate-us-grafico {
-    text-align: center;
-    padding: 7%;
-}
-*/
 #rate-us-rate {
    display: flex;
    justify-content: center;
@@ -238,11 +226,11 @@ input{
     justify-content: space-around;    
 }
 
-
 #canvaContainer{
     position: relative;
     width: 75%;
 }
+
 #complimenti{
     width: 40%;
     position: absolute;
@@ -250,7 +238,6 @@ input{
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
-
 }
 
 #rate-us-left-correct, #rate-us-right-content{
@@ -285,11 +272,9 @@ input{
 }
 
 .re-size {
-    /* <--------------------------------------------------- proporzionare la grandezza e posizione in base alla pagina  */
     font-size: 7px;
     color: #EFE9F0;
     font-family: 'Inter', sans-serif;
-
 }
 
 .base-timer__circle {
@@ -388,10 +373,11 @@ textarea:focus{
     display: block;
     text-align: center;
 }
+
 #inviaDati{
     cursor: pointer;
-
 }
+
 input[type="checkbox"]{ 
     appearance: none;       
     height: 1.1rem;
@@ -405,6 +391,7 @@ input[type="checkbox"]{
     justify-content: center;
     margin-right: 1em;
 }
+
 input[type="checkbox"]:checked::before{
     content: "✓";
     color: white;

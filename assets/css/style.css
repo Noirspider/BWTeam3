@@ -109,9 +109,7 @@ label{
 }
 
 label:hover{ 
-
- background-color: rgba(240, 248, 255, 0.308) ;
-
+    background: linear-gradient(0deg, rgba(121,0,121,1) 6%, rgba(173,0,143,1) 39%, rgba(187,1,155,1) 86%);
 }
 
 #thisQuestion{ 
@@ -129,7 +127,6 @@ label:hover{
     color:#a6018b;
     font-size: 16px;
 
-
 }
 
 .questions{
@@ -140,9 +137,11 @@ label:hover{
     color: rgb(255, 255, 255);
     font-family: 'Outfit', sans-serif;
 }
+
 input{
     text-decoration-style: none;
 }
+
 .questions-count{
     font-weight: 400;
     letter-spacing: 3px;
@@ -311,7 +310,18 @@ input{
     transition: 1s linear all;
     fill-rule: nonzero;
     stroke: currentColor;
-    stroke: cyan;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(00, 255, 255);
+}
+
+.base-timer__path-remaining.orange {
+    color: rgb(00, 255, 255);
+}
+
+.base-timer__path-remaining.red {
+    color: rgb(00, 255, 255);
 }
 
 .base-timer__label {
